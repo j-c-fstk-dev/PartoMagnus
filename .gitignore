@@ -1,4 +1,3 @@
-cat > .gitignore << 'EOF'
 # Dependencies
 node_modules/
 /.pnp
@@ -166,4 +165,3 @@ dist/
 .Trashes
 ehthumbs.db
 Thumbs.db
-EOF
