@@ -2,7 +2,7 @@
  * Hospital service for managing hospital data and emergency contacts
  */
 
-import { Hospital, BirthCenter, HospitalContact } from '@/types/hospital'
+import { Hospital, BirthCenter } from '@/types/hospital'
 import { HOSPITALS, BIRTH_CENTERS, EMERGENCY_NUMBERS, calculateDistance } from '@/config/hospitals'
 import { logger } from '@/utils/logger'
 

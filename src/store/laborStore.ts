@@ -222,7 +222,6 @@ export const useLaborStore = create<LaborState>()(
               alertLevel: 'RED',
               type: 'other',
               description: record.generalObservations || 'Alerta de anamnese',
-              requiresHospitalization: record.requiresHospitalization,
             }
             get().addAlert(alert)
           }

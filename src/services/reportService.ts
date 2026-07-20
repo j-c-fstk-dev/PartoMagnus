@@ -77,7 +77,7 @@ export class ReportService {
     const totalDuration = session.endTime
       ? new Date(session.endTime).getTime() - new Date(session.startTime).getTime()
       : 0
-    const totalMinutes = Math.round(totalDuration / 60000)
+    // const totalMinutes = Math.round(totalDuration / 60000)
 
     const contractionStats = {
       total: session.contractions.length,

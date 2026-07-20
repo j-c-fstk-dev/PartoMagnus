@@ -5,16 +5,10 @@
 import React, { useState } from 'react'
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
-import { Badge } from '@/components/Badge'
 import { useAudio } from '@/hooks/useAudio'
 import { useVibration } from '@/hooks/useVibration'
 import { SOLFEGGIO_FREQUENCIES } from '@/utils/constants'
 import { logger } from '@/utils/logger'
-
-interface FrequencyInfo {
-  name: string
-  benefits: string[]
-}
 
 export const MusicPanel: React.FC = () => {
   const [isPlayingFrequency, setIsPlayingFrequency] = useState(false)
@@ -135,7 +129,7 @@ export const MusicPanel: React.FC = () => {
                       </div>
                       <p className="text-xs text-dark-400">{info.name}</p>
                       <p className="text-xs text-dark-500 mt-1">
-                        Benefícios: {info.benefits.slice(0, 2).join(', ')}...
+                        Benefícios: {info.benefit}...
                       </p>
                     </div>
                     <Button
@@ -163,12 +157,12 @@ export const MusicPanel: React.FC = () => {
               <ul className="text-xs text-dark-300 space-y-1">
                 {SOLFEGGIO_FREQUENCIES[
                   currentFrequency as keyof typeof SOLFEGGIO_FREQUENCIES
-                ].benefits.map((benefit, index) => (
-                  <li key={index} className="flex gap-2">
+                ].benefit ? (
+                  <li className="flex gap-2">
                     <span className="text-primary-400">•</span>
-                    <span>{benefit}</span>
+                    <span>{SOLFEGGIO_FREQUENCIES[currentFrequency as keyof typeof SOLFEGGIO_FREQUENCIES].benefit}</span>
                   </li>
-                ))}
+                ) : null}
               </ul>
             </Card>
           )}

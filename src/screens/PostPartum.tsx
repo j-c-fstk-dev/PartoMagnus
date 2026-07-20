@@ -7,7 +7,6 @@ import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Header } from '@/components/Header'
 import { Input } from '@/components/Input'
-import { Modal } from '@/components/Modal'
 import { useLaborStore } from '@/store/laborStore'
 import { NAVIGATION } from '@/config/routes'
 import { formatDateTime } from '@/utils/formatting'
@@ -27,7 +26,7 @@ export const PostPartum: React.FC = () => {
 
   const [userRating, setUserRating] = useState(5)
   const [userNotes, setUserNotes] = useState('')
-  const [showSummary, setShowSummary] = useState(true)
+  const [_showSummary, setShowSummary] = useState(true)
   const [isSaving, setIsSaving] = useState(false)
 
   if (!currentSession) {

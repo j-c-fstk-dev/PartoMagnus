@@ -2,7 +2,7 @@
  * Custom hook for audio management and playback
  */
 
-import { useState, useCallback, useRef } from 'react'
+import { useState, useCallback } from 'react'
 import { AudioService } from '@/services/audioService'
 import { logger } from '@/utils/logger'
 
@@ -21,8 +21,8 @@ export function useAudio() {
   })
 
   const [error, setError] = useState<string | null>(null)
-  const [isSupported, setIsSupported] = useState(AudioService.isAudioSupported())
-  const currentAudioRef = useRef<HTMLAudioElement | null>(null)
+  const [isSupported] = useState(AudioService.isAudioSupported())
+  // const currentAudioRef = useRef<HTMLAudioElement | null>(null)
 
   /**
    * Initialize audio context

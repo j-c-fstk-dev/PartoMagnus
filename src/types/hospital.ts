@@ -54,6 +54,12 @@ export type HospitalService =
   | 'blood_bank' 
   | 'emergency'
 
+
+export interface NearbyBirthCenter extends BirthCenter {
+  distance: number // km
+  estimatedTime: number // minutos
+  route?: RouteInfo
+}
 export interface NearbyHospital extends Hospital {
   distance: number // km
   estimatedTime: number // minutos

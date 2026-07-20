@@ -3,7 +3,7 @@
  * Focused on Pindamonhangaba, SP, Brazil
  */
 
-import { Hospital, BirthCenter } from '@/types/hospital'
+import { Hospital, BirthCenter, NearbyHospital, NearbyBirthCenter } from '@/types/hospital'
 
 // Pindamonhangaba hospitals
 export const HOSPITALS: Hospital[] = [
@@ -115,7 +115,8 @@ export function getHospitalsByCity(city: string): Hospital[] {
   return HOSPITALS.filter(h => h.city === city)
 }
 
-export function getNearbyHospitals(latitude: number, longitude: number, radiusKm: number = 20) {
+
+export function getNearbyHospitals(latitude: number, longitude: number, radiusKm: number = 20): NearbyHospital[] {
   return HOSPITALS
     .map(hospital => {
       const distance = calculateDistance(latitude, longitude, hospital.coordinates.latitude, hospital.coordinates.longitude)
@@ -128,11 +129,12 @@ export function getNearbyHospitals(latitude: number, longitude: number, radiusKm
       }
       return null
     })
-    .filter(Boolean)
-    .sort((a, b) => (a?.distance || 0) - (b?.distance || 0))
+    .filter((item): item is NearbyHospital => item !== null)
+    .sort((a, b) => a.distance - b.distance)
 }
 
-export function getNearbyBirthCenters(latitude: number, longitude: number, radiusKm: number = 20) {
+
+export function getNearbyBirthCenters(latitude: number, longitude: number, radiusKm: number = 20): NearbyBirthCenter[] {
   return BIRTH_CENTERS
     .map(center => {
       const distance = calculateDistance(latitude, longitude, center.coordinates.latitude, center.coordinates.longitude)
@@ -145,8 +147,8 @@ export function getNearbyBirthCenters(latitude: number, longitude: number, radiu
       }
       return null
     })
-    .filter(Boolean)
-    .sort((a, b) => (a?.distance || 0) - (b?.distance || 0))
+    .filter((item): item is NearbyBirthCenter => item !== null)
+    .sort((a, b) => a.distance - b.distance)
 }
 
 // Haversine formula to calculate distance between two coordinates

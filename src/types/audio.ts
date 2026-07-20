@@ -1,3 +1,5 @@
+import { LaborPhase, ContractionIntensity } from '@/types/labor'
+
 export type AudioFrequency = 
   | 174
   | 285
@@ -187,5 +189,3 @@ export interface FrequencyTherapy {
 }
 
 // Type guards
-export type LaborPhase = 'LATENT' | 'ACTIVE' | 'TRANSITION' | 'EXPULSIVE'
-export type ContractionIntensity = 'LEVE' | 'MODERADA' | 'FORTE'

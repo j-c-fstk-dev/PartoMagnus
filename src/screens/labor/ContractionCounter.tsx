@@ -20,7 +20,7 @@ interface ContractionCounterProps {
 
 export const ContractionCounter: React.FC<ContractionCounterProps> = ({
   onContractionAdded,
-  sessionId,
+  // sessionId - mantido para compatibilidade de interface
 }) => {
   const {
     contractions,
@@ -80,7 +80,7 @@ export const ContractionCounter: React.FC<ContractionCounterProps> = ({
     })
   }
 
-  const handleRegisterQuick = (dur: number, int: 'LEVE' | 'MODERADA' | 'FORTE') => {
+  const handleRegisterQuick = (_dur: number, int: 'LEVE' | 'MODERADA' | 'FORTE') => {
     endContraction(int, '')
     vibrateContractionDetected()
     onContractionAdded?.()
@@ -266,7 +266,7 @@ export const ContractionCounter: React.FC<ContractionCounterProps> = ({
             max="120"
             value={duration}
             onChange={(e) => setDuration(e.target.value)}
-            error={error}
+            error={error || undefined}
           />
 
           <div className="space-y-2">

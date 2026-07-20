@@ -14,9 +14,6 @@ import { Onboarding } from '@/screens/Onboarding'
 import { Anamnesis } from '@/screens/Anamnesis'
 import { Home } from '@/screens/Home'
 import { LaborTracking } from '@/screens/LaborTracking'
-import { PostPartum } from '@/screens/PostPartum'
-import { History } from '@/screens/History'
-import { Settings } from '@/screens/Settings'
 
 export const App: React.FC = () => {
   const isOnboarding = useAppStore(state => state.isOnboarding)

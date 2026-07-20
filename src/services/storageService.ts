@@ -3,7 +3,6 @@
  * Handles persistence of app data
  */
 
-import { STORAGE_KEYS } from '@/utils/constants'
 import { logger } from '@/utils/logger'
 
 // ============ LOCALSTORAGE WRAPPER ============

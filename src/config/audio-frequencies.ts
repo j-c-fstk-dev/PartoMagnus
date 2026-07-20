@@ -3,8 +3,8 @@
  * Solfeggio frequencies and guided audio tracks
  */
 
-import { AudioFrequencyInfo, BreathingTechnique, Playlist } from '@/types/audio'
-import { SOLFEGGIO_FREQUENCIES } from '@/utils/constants'
+import { AudioFrequencyInfo, Playlist } from '@/types/audio'
+import { BreathingTechnique } from '@/types/labor'
 
 // ============ SOLFEGGIO FREQUENCIES ============
 
@@ -127,7 +127,7 @@ export const BREATHING_TECHNIQUES: BreathingTechnique[] = [
     name: 'Relaxamento Progressivo',
     description: 'Relaxamento sistemático de cada parte do corpo',
     duration: 600,
-    technique: 'progressive_relaxation',
+    technique: 'relaxation',
     audioUrl: '/audio/breathing-guides/progressive-relaxation.mp3',
     forPhase: ['LATENT'],
   },
@@ -152,6 +152,7 @@ export const PLAYLISTS: Playlist[] = [
         language: 'pt-BR',
         explicit: false,
         loopable: true,
+        volume: 70,
         createdAt: new Date().toISOString(),
       },
     ],
@@ -180,6 +181,7 @@ export const PLAYLISTS: Playlist[] = [
         language: 'pt-BR',
         explicit: false,
         loopable: true,
+        volume: 70,
         createdAt: new Date().toISOString(),
       },
     ],
@@ -208,6 +210,7 @@ export const PLAYLISTS: Playlist[] = [
         language: 'pt-BR',
         explicit: false,
         loopable: true,
+        volume: 70,
         createdAt: new Date().toISOString(),
       },
     ],

@@ -19,7 +19,7 @@ export class AudioService {
   private static audioContext: AudioContext | null = null
   private static currentOscillator: OscillatorNode | null = null
   private static gainNode: GainNode | null = null
-  private static isPlaying = false
+  // private static isPlaying = false
 
   /**
    * Initialize Web Audio API
@@ -62,7 +62,7 @@ export class AudioService {
       // Start oscillator
       oscillator.start()
       this.currentOscillator = oscillator
-      this.isPlaying = true
+      // this.isPlaying = true
 
       logger.info(`AudioService: Playing ${frequency}Hz frequency`)
 
@@ -84,7 +84,7 @@ export class AudioService {
         this.currentOscillator.stop()
         this.currentOscillator = null
       }
-      this.isPlaying = false
+      // this.isPlaying = false
       logger.debug('AudioService: Frequency stopped')
     } catch (error) {
       logger.error('AudioService: Failed to stop frequency', error)
@@ -110,7 +110,7 @@ export class AudioService {
    */
   static getFrequencyInfo(frequency: number): {
     name: string
-    benefits: string[]
+    benefit: string
   } | null {
     return SOLFEGGIO_FREQUENCIES[frequency as keyof typeof SOLFEGGIO_FREQUENCIES] || null
   }

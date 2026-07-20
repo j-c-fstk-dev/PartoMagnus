@@ -3,7 +3,7 @@
  */
 
 import { Contraction, ContractionPattern, LaborPhase } from '@/types/labor'
-import { LABOR_DIAGNOSIS, CONTRACTION_PATTERNS, LABOR_PHASES } from './constants'
+import { LABOR_DIAGNOSIS, LABOR_PHASES } from './constants'
 
 // ============ PHASE DETECTION ============
 
@@ -135,8 +135,8 @@ function calculateIntensityTrend(contractions: Contraction[]): 'increasing' | 's
   const firstHalf = intensityValues.slice(0, Math.floor(intensityValues.length / 2))
   const secondHalf = intensityValues.slice(Math.floor(intensityValues.length / 2))
 
-  const firstAvg = firstHalf.reduce((a, b) => a + b, 0) / firstHalf.length
-  const secondAvg = secondHalf.reduce((a, b) => a + b, 0) / secondHalf.length
+  const firstAvg = firstHalf.reduce((a: number, b: number) => a + b, 0) / firstHalf.length
+  const secondAvg = secondHalf.reduce((a: number, b: number) => a + b, 0) / secondHalf.length
 
   const diff = secondAvg - firstAvg
 

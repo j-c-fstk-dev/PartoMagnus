@@ -29,7 +29,7 @@ export const AnamnesisPoll: React.FC<AnamnesisPollProps> = ({
 
   const addAnamnesisRecord = useLaborStore(state => state.addAnamnesisRecord)
 
-  const questions = AnamnesisService.getQuestions()
+  // const questions = AnamnesisService.getQuestions()
 
   const handleStartPoll = () => {
     const now = Date.now()

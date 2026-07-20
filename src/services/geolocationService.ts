@@ -207,17 +207,22 @@ export class GeolocationService {
   /**
    * Get coordinates from hospital ID
    */
-  static getHospitalCoordinates(hospitalId: string): { latitude: number; longitude: number } | null {
-    const hospitals = await this.getNearbyHospitals(100)
-    if (!hospitals) return null
+  static async getHospitalCoordinates(hospitalId: string): Promise<{ latitude: number; longitude: number } | null> {
+    try {
+      const hospitals = await this.getNearbyHospitals(100)
+      if (!hospitals) return null
 
-    const hospital = hospitals.find(h => h.id === hospitalId)
-    return hospital
-      ? {
-          latitude: hospital.coordinates.latitude,
-          longitude: hospital.coordinates.longitude,
-        }
-      : null
+      const hospital = hospitals?.find(h => h.id === hospitalId)
+      return hospital
+        ? {
+            latitude: hospital.coordinates.latitude,
+            longitude: hospital.coordinates.longitude,
+          }
+        : null
+    } catch (error) {
+      logger.error('GeolocationService: Failed to get hospital coordinates', error)
+      return null
+    }
   }
 
   /**

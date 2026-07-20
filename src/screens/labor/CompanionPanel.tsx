@@ -8,7 +8,6 @@ import { Card } from '@/components/Card'
 import { Modal } from '@/components/Modal'
 import { Badge } from '@/components/Badge'
 import { LaborPhase } from '@/types/labor'
-import { logger } from '@/utils/logger'
 
 interface CompanionTip {
   phase: LaborPhase | 'all'

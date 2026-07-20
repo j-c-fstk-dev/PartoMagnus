@@ -1,3 +1,5 @@
+import { User } from '@/types/user'
+
 // Export all types from this module
 export * from './user'
 export * from './labor'

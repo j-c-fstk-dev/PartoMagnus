@@ -11,7 +11,7 @@ import { Modal } from '@/components/Modal'
 import { useUserStore } from '@/store/userStore'
 import { useAppStore } from '@/store/appStore'
 import { NAVIGATION } from '@/config/routes'
-import { formatDate, formatWeeks } from '@/utils/formatting'
+import { formatDate } from '@/utils/formatting'
 import { logger } from '@/utils/logger'
 
 export const Home: React.FC = () => {

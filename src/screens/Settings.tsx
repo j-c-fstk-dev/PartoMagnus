@@ -20,7 +20,7 @@ export const Settings: React.FC = () => {
   const updatePreferences = useUserStore(state => state.updatePreferences)
   const clearUser = useUserStore(state => state.clearUser)
 
-  const [showDataOptions, setShowDataOptions] = useState(false)
+  // const [showDataOptions, setShowDataOptions] = useState(false)
   const [showAbout, setShowAbout] = useState(false)
 
   const handleExportData = () => {

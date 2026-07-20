@@ -5,7 +5,6 @@
 import React from 'react'
 import { clsx } from 'clsx'
 
-type InputType = 'text' | 'email' | 'password' | 'number' | 'date' | 'time' | 'tel' | 'url'
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string
@@ -13,7 +12,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   helpText?: string
   icon?: React.ReactNode
   variant?: 'default' | 'filled' | 'outlined'
-  size?: 'sm' | 'md' | 'lg'
+  inputSize?: 'sm' | 'md' | 'lg'
   isRequired?: boolean
 }
 
@@ -25,7 +24,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       helpText,
       icon,
       variant = 'default',
-      size = 'md',
+      inputSize = 'md',
       isRequired = false,
       className,
       type = 'text',
@@ -59,7 +58,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const inputClass = clsx(
       baseStyles,
       variantStyles[variant],
-      sizeStyles[size],
+      sizeStyles[inputSize],
       disabledStyles,
       errorStyles,
       icon ? 'pl-10' : '',

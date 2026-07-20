@@ -68,13 +68,13 @@ export const SOSPanel: React.FC = () => {
         </Button>
 
         <Button
-          onClick={() => alert('Bombeiros: ' + emergencyNumbers.FIRE_DEPARTMENT)}
+          onClick={() => alert('Bombeiros: ' + emergencyNumbers.FIRE)}
           size="md"
           isFullWidth
           variant="danger"
           leftIcon="🚒"
         >
-          {emergencyNumbers.FIRE_DEPARTMENT} - Bombeiros
+          {emergencyNumbers.FIRE} - Bombeiros
         </Button>
 
         <Button
@@ -112,7 +112,7 @@ export const SOSPanel: React.FC = () => {
         onClick={() => setShowEmergencyGuide(true)}
         size="md"
         isFullWidth
-        variant="warning"
+        variant="secondary"
         leftIcon="📋"
       >
         Guia de Emergência

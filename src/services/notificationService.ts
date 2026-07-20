@@ -155,7 +155,7 @@ export class NotificationService {
   /**
    * Send alert notification
    */
-  static async sendAlert(alertType: string, message: string): Promise<void> {
+  static async sendAlert(_alertType: string, message: string): Promise<void> {
     await this.sendNotification({
       title: '⚠️ Alerta',
       body: message,
