@@ -7,6 +7,7 @@ import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { NAVIGATION } from '@/config/routes'
 import { useAppStore } from '@/store/appStore'
+import { useUserStore } from '@/store/userStore'
 import { useAudio } from '@/hooks/useAudio'
 import { logger } from '@/utils/logger'
 
@@ -15,8 +16,20 @@ export const Onboarding: React.FC = () => {
   const setOnboarding = useAppStore(state => state.setOnboarding)
   const { playFrequency, stopFrequency } = useAudio()
 
+  const setUser = useUserStore(state => state.setUser)
+  
   const handleBegin = () => {
     logger.info('Onboarding: User clicked begin')
+    
+    // Create minimal user to allow progression
+    const newUser = {
+      id: crypto.randomUUID(),
+      name: '',
+      birthDate: '',
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    }
+    setUser(newUser)
     setOnboarding(false)
     window.location.href = NAVIGATION.anamnesis()
   }

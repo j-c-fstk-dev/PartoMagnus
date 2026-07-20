@@ -44,7 +44,7 @@ export const Anamnesis: React.FC = () => {
 
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [isLoading, setIsLoading] = useState(false)
-  const updateAnamnesis = useUserStore(state => state.updateAnamnesis)
+  const setAnamnesis = useUserStore(state => state.setAnamnesis)
 
   const handleInputChange = (field: string, value: any) => {
     setFormData(prev => ({
@@ -138,7 +138,7 @@ export const Anamnesis: React.FC = () => {
         updatedAt: new Date().toISOString(),
       }
 
-      updateAnamnesis(anamnesisData)
+      setAnamnesis(anamnesisData)
       logger.info('Anamnesis: Completed', { riskLevel })
       
       window.location.href = NAVIGATION.home()
