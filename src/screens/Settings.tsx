@@ -30,7 +30,7 @@ export const Settings: React.FC = () => {
       const url = URL.createObjectURL(blob)
       const link = document.createElement('a')
       link.href = url
-      link.download = `beregenerative-data-${new Date().toISOString().split('T')[0]}.json`
+      link.download = `parto-magnus-data-${new Date().toISOString().split('T')[0]}.json`
       document.body.appendChild(link)
       link.click()
       document.body.removeChild(link)
@@ -238,7 +238,7 @@ export const Settings: React.FC = () => {
           {showAbout && (
             <div className="mt-4 p-4 bg-dark-800/50 rounded-lg text-xs text-dark-400 space-y-2">
               <p>
-                <strong>Beregenerative</strong> é um aplicativo baseado em evidências científicas 
+                <strong>Parto Magnus</strong> é um aplicativo baseado em evidências científicas 
                 para o acompanhamento de parto, desenvolvido com protocolos da OMS e FEBRASGO.
               </p>
               <p>

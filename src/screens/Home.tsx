@@ -58,7 +58,7 @@ export const Home: React.FC = () => {
     <div className="min-h-screen bg-dark-950">
       <Header
         title={`Olá, ${user.name?.split(' ')[0]}! 👶`}
-        subtitle="Bem-vindo ao Beregenerative"
+        subtitle="Bem-vindo ao Parto Magnus"
       />
 
       <div className="max-w-4xl mx-auto p-6 space-y-6">

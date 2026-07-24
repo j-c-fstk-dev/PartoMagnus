@@ -93,7 +93,7 @@ export class ReportService {
       <html lang="pt-BR">
       <head>
         <meta charset="UTF-8">
-        <title>Relatório de Parto - Beregenerative</title>
+        <title>Relatório de Parto - Parto Magnus</title>
         <style>
           * { margin: 0; padding: 0; box-sizing: border-box; }
           body { font-family: Arial, sans-serif; color: #333; line-height: 1.6; }
@@ -122,7 +122,7 @@ export class ReportService {
           <!-- Header -->
           <div class="header">
             <h1>Relatório de Parto</h1>
-            <p>Beregenerative - Acompanhamento de Parto Baseado em Evidências</p>
+            <p>Parto Magnus - Acompanhamento de Parto Baseado em Evidências</p>
           </div>
 
           <!-- Session Info -->
@@ -191,7 +191,7 @@ export class ReportService {
 
           <!-- Footer -->
           <div class="footer">
-            <p>Este relatório foi gerado automaticamente pelo aplicativo Beregenerative.</p>
+            <p>Este relatório foi gerado automaticamente pelo aplicativo Parto Magnus.</p>
             <p>Data de geração: ${formatDate(new Date())}</p>
             <p>Para dúvidas, consulte seu médico ou profissional de saúde.</p>
           </div>
@@ -241,7 +241,7 @@ export class ReportService {
 
       await navigator.share({
         title: 'Relatório de Parto',
-        text: 'Meu relatório de parto do aplicativo Beregenerative',
+        text: 'Meu relatório de parto do aplicativo Parto Magnus',
         files: [file],
       })
 
@@ -263,7 +263,7 @@ export class ReportService {
     const outcome = session.outcome || 'Não registrado'
 
     return `
-RELATÓRIO DE PARTO - BEREGENERATIVE
+RELATÓRIO DE PARTO - PARTO MAGNUS
 ====================================
 
 Data de Início: ${startDate}

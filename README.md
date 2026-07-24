@@ -1,4 +1,4 @@
-# 🤰 PartoMagnus (Beregenerative)
+# 🤰 PartoMagnus (Parto Magnus)
 
 > Acompanhamento de Parto Baseado em Evidências para Gestantes Brasileiras
 
@@ -262,7 +262,7 @@ npm run build
 
 ## 📞 Support & Contact
 
-- 📧 Email: support@beregenerative.com (TODO)
+- 📧 Email: support@parto-magnus.com (TODO)
 - 🐛 Issues: GitHub Issues
 - 💬 Feedback: User feedback form in app
 

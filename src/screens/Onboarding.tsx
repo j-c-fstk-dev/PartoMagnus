@@ -57,7 +57,7 @@ export const Onboarding: React.FC = () => {
         <div className="text-center space-y-4">
           <div className="text-6xl mb-4">🤰✨</div>
           <h1 className="text-4xl md:text-5xl font-bold text-dark-100">
-            Beregenerative
+            Parto Magnus
           </h1>
           <p className="text-lg text-dark-400">
             Acompanhamento de Parto Baseado em Evidências

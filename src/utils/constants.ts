@@ -1,5 +1,5 @@
 // App metadata
-export const APP_NAME = 'Beregenerative'
+export const APP_NAME = 'Parto Magnus'
 export const APP_VERSION = '0.1.0'
 export const APP_DESCRIPTION = 'App de acompanhamento de parto baseado em evidências clínicas'
 
@@ -107,15 +107,15 @@ export const COLORS = {
 
 // Storage keys
 export const STORAGE_KEYS = {
-  USER: 'beregenerative:user',
-  ANAMNESIS: 'beregenerative:anamnesis',
-  LABOR_SESSION: 'beregenerative:labor_session',
-  CONTRACTIONS: 'beregenerative:contractions',
-  USER_PREFERENCES: 'beregenerative:preferences',
-  AUDIO_SETTINGS: 'beregenerative:audio_settings',
-  APP_STATE: 'beregenerative:app_state',
-  LABOR_SESSIONS_HISTORY: 'beregenerative:labor_history',
-  TIMESTAMP: 'beregenerative:timestamp',
+  USER: 'partomagnus:user',
+  ANAMNESIS: 'partomagnus:anamnesis',
+  LABOR_SESSION: 'partomagnus:labor_session',
+  CONTRACTIONS: 'partomagnus:contractions',
+  USER_PREFERENCES: 'partomagnus:preferences',
+  AUDIO_SETTINGS: 'partomagnus:audio_settings',
+  APP_STATE: 'partomagnus:app_state',
+  LABOR_SESSIONS_HISTORY: 'partomagnus:labor_history',
+  TIMESTAMP: 'partomagnus:timestamp',
 } as const
 
 // Time constants

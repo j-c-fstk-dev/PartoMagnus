@@ -62,12 +62,12 @@ class LocalStorageService {
     return keys
   }
 
-  getAllBeregenerativeData(): Record<string, unknown> {
+  getAllAppData(): Record<string, unknown> {
     const data: Record<string, unknown> = {}
     const keys = this.getAllKeys()
 
     keys.forEach(key => {
-      if (key.startsWith('beregenerative:')) {
+      if (key.startsWith('partomagnus:')) {
         data[key] = this.get(key)
       }
     })
@@ -76,7 +76,7 @@ class LocalStorageService {
   }
 
   exportData(): string {
-    const data = this.getAllBeregenerativeData()
+    const data = this.getAllAppData()
     return JSON.stringify(data, null, 2)
   }
 
@@ -258,7 +258,7 @@ class IndexedDBService {
 export const localStorageService = new LocalStorageService()
 
 export const indexedDBService = new IndexedDBService({
-  dbName: 'beregenerative',
+  dbName: 'partomagnus',
   version: 1,
   stores: {
     'labor-sessions': 'id',

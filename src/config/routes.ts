@@ -21,7 +21,7 @@ export const ROUTES: Route[] = [
     path: '/onboarding',
     name: 'onboarding',
     component: 'Onboarding',
-    title: 'Bem-vindo ao Beregenerative',
+    title: 'Bem-vindo ao Parto Magnus',
   },
   {
     path: '/anamnesis',

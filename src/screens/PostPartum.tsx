@@ -240,7 +240,7 @@ export const PostPartum: React.FC = () => {
             Parabéns pela sua força, resiliência e amor."
           </p>
           <p className="text-dark-400 text-sm">
-            — Beregenerative
+            — Parto Magnus
           </p>
         </Card>
 

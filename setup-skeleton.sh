@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# BEREGENERATIVE - Setup Skeleton Script
+# PARTO MAGNUS - Setup Skeleton Script
 # Cria toda a estrutura de pastas e arquivos vazios
 # Uso: chmod +x setup-skeleton.sh && ./setup-skeleton.sh
 
 set -e
 
-echo "🚀 BEREGENERATIVE - Criando estrutura do projeto..."
+echo "🚀 PARTO MAGNUS - Criando estrutura do projeto..."
 echo ""
 
 # Cores para output
@@ -221,7 +221,7 @@ echo "   • Pastas: $(find . -type d | wc -l)"
 echo "   • Arquivos: $(find . -type f | wc -l)"
 echo ""
 echo "🚀 Próximos passos:"
-echo "   1. cd beregenerative"
+echo "   1. cd parto-magnus"
 echo "   2. pnpm install (ou npm install)"
 echo "   3. Seguir a ordem de criação de arquivos no PROJECT_STRUCTURE.md"
 echo ""
