@@ -15,6 +15,19 @@ import { logger } from '@/utils/logger'
 
 type AnamnesisStep = 1 | 2 | 3 | 4 | 5
 
+/**
+ * Calcula semana gestacional a partir da DPP
+ * Padrão: 40 semanas de gestação
+ */
+const calculateCurrentWeek = (dueDate: string): number => {
+  if (!dueDate) return 37
+  const today = new Date()
+  const dpp = new Date(dueDate)
+  const daysUntilDue = (dpp.getTime() - today.getTime()) / (1000 * 60 * 60 * 24)
+  const week = Math.round(40 - (daysUntilDue / 7))
+  return Math.max(0, Math.min(43, week))
+}
+
 export const Anamnesis: React.FC = () => {
   const [step, setStep] = useState<AnamnesisStep>(1)
   const [formData, setFormData] = useState({
@@ -77,7 +90,7 @@ export const Anamnesis: React.FC = () => {
 
   const handleSubmit = async () => {
     const validation = validateAnamnesisForm({
-      currentWeek: formData.currentWeek,
+      currentWeek: calculateCurrentWeek(formData.estimatedDueDate),
       estimatedDueDate: formData.estimatedDueDate,
       numberOfPreviousPregnancies: formData.numberOfPreviousPregnancies,
       numberOfNormalBirths: formData.numberOfNormalBirths,
@@ -113,7 +126,7 @@ export const Anamnesis: React.FC = () => {
       const anamnesisData = {
         id: crypto.randomUUID(),
         userId: '',
-        currentWeek: formData.currentWeek,
+        currentWeek: calculateCurrentWeek(formData.estimatedDueDate),
         estimatedDueDate: formData.estimatedDueDate,
         numberOfPreviousPregnancies: formData.numberOfPreviousPregnancies,
         numberOfNormalBirths: formData.numberOfNormalBirths,
@@ -183,21 +196,18 @@ export const Anamnesis: React.FC = () => {
           <div className="space-y-4">
             <h2 className="text-2xl font-bold text-dark-100">Dados da Gravidez Atual</h2>
             <Input
-              label="Semana gestacional atual"
-              type="number"
-              min={0}
-              max={43}
-              value={formData.currentWeek}
-              onChange={(e) => handleInputChange('currentWeek', parseInt(e.target.value))}
-              isRequired
-            />
-            <Input
               label="Data prevista do parto (DPP)"
               type="date"
               value={formData.estimatedDueDate}
               onChange={(e) => handleInputChange('estimatedDueDate', e.target.value)}
               isRequired
             />
+            <div className="bg-primary-900/10 border border-primary-700/30 rounded-lg p-3">
+              <span className="text-dark-500 text-sm">Semana gestacional atual (calculada pela DPP)</span>
+              <p className="text-primary-400 font-semibold text-xl">
+                {calculateCurrentWeek(formData.estimatedDueDate)} semanas
+              </p>
+            </div>
             <div className="space-y-2">
               <label className="text-sm font-medium text-dark-200">Posição do bebê</label>
               <div className="flex gap-3">
